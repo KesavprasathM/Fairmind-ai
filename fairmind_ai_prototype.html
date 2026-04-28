@@ -1,0 +1,197 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.app{max-width:700px;padding:1rem 0}
+.header{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem}
+.logo{width:36px;height:36px;border-radius:8px;background:#185FA5;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:500;font-size:14px}
+.tagline{font-size:12px;color:var(--color-text-secondary)}
+.tabs{display:flex;gap:2px;border-bottom:0.5px solid var(--color-border-tertiary);margin-bottom:1.5rem}
+.tab{padding:8px 16px;font-size:13px;cursor:pointer;border:none;background:none;color:var(--color-text-secondary);border-bottom:2px solid transparent}
+.tab.active{color:var(--color-text-primary);border-bottom:2px solid #185FA5;font-weight:500}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem;margin-bottom:1rem}
+.section-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--color-text-secondary);margin-bottom:.75rem}
+.upload-zone{border:1.5px dashed var(--color-border-secondary);border-radius:var(--border-radius-md);padding:2rem;text-align:center;cursor:pointer;transition:background .2s}
+.upload-zone:hover{background:var(--color-background-secondary)}
+.upload-icon{font-size:24px;margin-bottom:.5rem}
+.upload-text{font-size:14px;color:var(--color-text-secondary)}
+.upload-hint{font-size:12px;color:var(--color-text-tertiary);margin-top:.25rem}
+.attr-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:.75rem}
+.chip{padding:4px 10px;border-radius:20px;font-size:12px;border:0.5px solid var(--color-border-secondary);background:var(--color-background-secondary);cursor:pointer}
+.chip.selected{background:#E6F1FB;border-color:#185FA5;color:#0C447C}
+.btn-primary{background:#185FA5;color:#fff;border:none;padding:10px 20px;border-radius:var(--border-radius-md);font-size:13px;font-weight:500;cursor:pointer;width:100%;margin-top:1rem}
+.btn-primary:hover{background:#0C447C}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:1rem}
+.metric-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:.875rem;text-align:center}
+.metric-label{font-size:11px;color:var(--color-text-secondary);margin-bottom:.25rem}
+.metric-value{font-size:22px;font-weight:500}
+.metric-sub{font-size:11px;margin-top:.25rem}
+.fair{color:#3B6D11}.warn{color:#BA7517}.danger{color:#A32D2D}
+.score-ring{width:80px;height:80px;margin:0 auto 1rem}
+.bar-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
+.bar-label{width:80px;color:var(--color-text-secondary);text-align:right;flex-shrink:0}
+.bar-track{flex:1;height:18px;background:var(--color-background-secondary);border-radius:4px;overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:4px;transition:width .6s ease}
+.bar-val{width:36px;flex-shrink:0;font-weight:500}
+.gemini-box{background:linear-gradient(135deg,#E6F1FB,#EAF3DE);border:0.5px solid #B5D4F4;border-radius:var(--border-radius-lg);padding:1.25rem}
+.gemini-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;color:#185FA5;margin-bottom:.75rem}
+.gemini-text{font-size:13px;color:var(--color-text-primary);line-height:1.7}
+.highlight{background:#FAECE7;border-radius:3px;padding:1px 4px;color:#993C1D;font-weight:500}
+.fix-card{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:.875rem;margin-bottom:.625rem;display:flex;gap:10px;align-items:flex-start}
+.fix-num{width:24px;height:24px;border-radius:50%;background:#185FA5;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0;margin-top:1px}
+.fix-title{font-size:13px;font-weight:500;margin-bottom:.25rem}
+.fix-desc{font-size:12px;color:var(--color-text-secondary)}
+.projected{font-size:11px;color:#3B6D11;margin-top:.375rem;font-weight:500}
+.severity{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:500}
+.sev-high{background:#FAECE7;color:#993C1D}
+.sample-btn{background:none;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);padding:8px 14px;font-size:12px;cursor:pointer;color:var(--color-text-secondary);margin-right:6px;margin-top:.5rem}
+.sample-btn:hover{background:var(--color-background-secondary)}
+</style>
+
+<div class="app">
+  <div class="header">
+    <div class="logo">FM</div>
+    <div>
+      <div style="font-size:15px;font-weight:500;color:var(--color-text-primary)">FairMind AI</div>
+      <div class="tagline">AI bias detection &amp; fairness auditing — powered by Gemini</div>
+    </div>
+    <div style="margin-left:auto;font-size:11px;padding:3px 10px;background:#EAF3DE;color:#3B6D11;border-radius:20px;font-weight:500">Live MVP</div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('upload',this)">1. Upload</button>
+    <button class="tab" onclick="showTab('analyze',this)">2. Analysis</button>
+    <button class="tab" onclick="showTab('gemini',this)">3. Gemini Report</button>
+    <button class="tab" onclick="showTab('fix',this)">4. Remediation</button>
+  </div>
+
+  <div id="tab-upload">
+    <div class="card">
+      <div class="section-label">Dataset upload</div>
+      <div class="upload-zone" onclick="simulateUpload()">
+        <div class="upload-icon">📂</div>
+        <div class="upload-text">Drop CSV / drag here or click to browse</div>
+        <div class="upload-hint">Accepts .csv — max 50MB</div>
+      </div>
+      <div style="margin-top:.75rem;font-size:12px;color:var(--color-text-secondary)">Or try a sample dataset:</div>
+      <div>
+        <button class="sample-btn" onclick="loadSample('hiring')">Hiring data (10k rows)</button>
+        <button class="sample-btn" onclick="loadSample('loan')">Loan approvals (25k rows)</button>
+        <button class="sample-btn" onclick="loadSample('medical')">Medical triage (8k rows)</button>
+      </div>
+    </div>
+    <div class="card" id="config-card" style="display:none">
+      <div class="section-label">Configure protected attributes</div>
+      <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:.625rem">Auto-detected sensitive columns — select which to audit:</div>
+      <div class="attr-chips" id="chips"></div>
+      <div style="margin-top:1rem;font-size:13px">
+        <span style="color:var(--color-text-secondary)">Target variable (outcome):</span>
+        <strong id="target-label" style="color:var(--color-text-primary);margin-left:6px"></strong>
+      </div>
+      <button class="btn-primary" onclick="runAnalysis()">Run bias analysis ↗</button>
+    </div>
+  </div>
+
+  <div id="tab-analyze" style="display:none">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem">
+      <div style="font-size:14px;font-weight:500" id="dataset-title">Hiring Dataset — 10,000 rows</div>
+      <div class="severity sev-high">HIGH BIAS DETECTED</div>
+    </div>
+    <div class="metrics-grid">
+      <div class="metric-card"><div class="metric-label">Overall fairness score</div><div class="metric-value danger">38</div><div class="metric-sub danger">/ 100 — Critical</div></div>
+      <div class="metric-card"><div class="metric-label">Demographic parity</div><div class="metric-value danger">0.61</div><div class="metric-sub danger">Threshold: 0.80</div></div>
+      <div class="metric-card"><div class="metric-label">Equal opportunity diff</div><div class="metric-value warn">0.26</div><div class="metric-sub warn">Threshold: 0.10</div></div>
+      <div class="metric-card"><div class="metric-label">Attributes audited</div><div class="metric-value">3</div><div class="metric-sub" style="color:var(--color-text-secondary)">gender · race · age</div></div>
+    </div>
+    <div class="card">
+      <div class="section-label">Acceptance rate by group</div>
+      <div class="bar-row"><div class="bar-label">Male</div><div class="bar-track"><div class="bar-fill" style="width:67%;background:#185FA5"></div></div><div class="bar-val">67%</div></div>
+      <div class="bar-row"><div class="bar-label">Female</div><div class="bar-track"><div class="bar-fill" style="width:41%;background:#E24B4A"></div></div><div class="bar-val danger">41%</div></div>
+      <div class="bar-row" style="margin-top:.75rem"><div class="bar-label">White</div><div class="bar-track"><div class="bar-fill" style="width:64%;background:#185FA5"></div></div><div class="bar-val">64%</div></div>
+      <div class="bar-row"><div class="bar-label">Black</div><div class="bar-track"><div class="bar-fill" style="width:47%;background:#BA7517"></div></div><div class="bar-val warn">47%</div></div>
+      <div class="bar-row"><div class="bar-label">Hispanic</div><div class="bar-track"><div class="bar-fill" style="width:44%;background:#E24B4A"></div></div><div class="bar-val danger">44%</div></div>
+      <div style="font-size:11px;color:var(--color-text-secondary);margin-top:.75rem">Disparate impact ratio (female/male) = 0.61 — below the 4/5ths rule threshold of 0.80</div>
+    </div>
+  </div>
+
+  <div id="tab-gemini" style="display:none">
+    <div class="gemini-box">
+      <div class="gemini-badge">✦ Gemini 1.5 Pro audit report</div>
+      <p class="gemini-text">Analysis of the <strong>hiring_data.csv</strong> dataset reveals <span class="highlight">significant gender and racial bias</span> in candidate selection outcomes. Female applicants are accepted at a rate 34% lower than equivalent male applicants, with a Disparate Impact Ratio of 0.61 — well below the legally recognized 4/5ths threshold.</p>
+      <p class="gemini-text" style="margin-top:.875rem">The <span class="highlight">primary driver</span> is the feature <code style="font-family:var(--font-mono);font-size:12px;background:rgba(0,0,0,0.06);padding:1px 5px;border-radius:3px">employment_gap_months</code>, which disproportionately penalizes career interruptions statistically more common among women. This feature acts as a <strong>proxy variable</strong> for gender even without directly encoding it.</p>
+      <p class="gemini-text" style="margin-top:.875rem">For racial bias, candidates identified as Hispanic or Black face a 20-point lower acceptance rate. Feature correlation analysis shows <code style="font-family:var(--font-mono);font-size:12px;background:rgba(0,0,0,0.06);padding:1px 5px;border-radius:3px">zip_code_median_income</code> and <code style="font-family:var(--font-mono);font-size:12px;background:rgba(0,0,0,0.06);padding:1px 5px;border-radius:3px">university_tier</code> are highly correlated with race in this dataset.</p>
+      <p class="gemini-text" style="margin-top:.875rem"><strong>Severity: HIGH.</strong> This model, if deployed in production, would likely constitute unlawful discrimination under EEOC guidelines and EU AI Act Article 10. Immediate remediation is recommended before any live use.</p>
+    </div>
+    <div style="margin-top:.875rem;display:flex;gap:8px">
+      <button class="sample-btn" onclick="sendPrompt('How do I fix the employment_gap_months proxy bias in FairMind AI?')">Ask Claude about proxy bias ↗</button>
+      <button class="sample-btn" onclick="sendPrompt('What are the EEOC legal thresholds for disparate impact in hiring AI?')">EEOC legal thresholds ↗</button>
+    </div>
+  </div>
+
+  <div id="tab-fix" style="display:none">
+    <div class="section-label" style="margin-bottom:.75rem">AI-generated remediation playbook</div>
+    <div class="fix-card">
+      <div class="fix-num">1</div>
+      <div>
+        <div class="fix-title">Remove proxy feature: <code style="font-family:var(--font-mono);font-size:12px">employment_gap_months</code></div>
+        <div class="fix-desc">Drop this column before training. It encodes gender indirectly — female candidates average 8.4 months career gap vs 2.1 months for males, creating systemic bias without intent.</div>
+        <div class="projected">Projected fairness score after fix: 71 / 100 (+33 pts)</div>
+      </div>
+    </div>
+    <div class="fix-card">
+      <div class="fix-num">2</div>
+      <div>
+        <div class="fix-title">Re-weight underrepresented samples</div>
+        <div class="fix-desc">Apply sample weights to training data: female candidates × 1.6, Hispanic × 1.4, Black × 1.35. Corrects for historical underrepresentation in the original training distribution.</div>
+        <div class="projected">Combined with Fix 1 → projected score: 84 / 100</div>
+      </div>
+    </div>
+    <div class="fix-card">
+      <div class="fix-num">3</div>
+      <div>
+        <div class="fix-title">Post-processing threshold calibration</div>
+        <div class="fix-desc">Apply group-specific decision thresholds so equal opportunity is maintained across gender and racial groups. Female threshold: 0.42 → 0.38; reduces false negatives without compromising precision significantly.</div>
+        <div class="projected">All 3 fixes combined → projected score: 91 / 100 ✓ Fair</div>
+      </div>
+    </div>
+    <button class="btn-primary" style="margin-top:.5rem" onclick="sendPrompt('Show me Python code to implement the FairMind AI remediation steps: remove proxy features, re-weight samples, and calibrate thresholds')">Generate remediation code ↗</button>
+  </div>
+</div>
+
+<script>
+const samples={hiring:{title:'Hiring Dataset — 10,000 rows',attrs:['gender','race','age','zip_code'],target:'hired'},loan:{title:'Loan Approvals — 25,000 rows',attrs:['gender','race','age','marital_status'],target:'approved'},medical:{title:'Medical Triage — 8,000 rows',attrs:['gender','ethnicity','age'],target:'priority_level'}};
+let selected=new Set(['gender','race','age']);
+
+function showTab(id,btn){
+  ['upload','analyze','gemini','fix'].forEach(t=>document.getElementById('tab-'+t).style.display='none');
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).style.display='';
+  btn.classList.add('active');
+}
+
+function simulateUpload(){loadSample('hiring')}
+
+function loadSample(key){
+  const s=samples[key];
+  document.getElementById('config-card').style.display='';
+  document.getElementById('dataset-title').textContent=s.title;
+  document.getElementById('target-label').textContent=s.target;
+  const c=document.getElementById('chips');
+  c.innerHTML='';
+  s.attrs.forEach(a=>{
+    const ch=document.createElement('div');
+    ch.className='chip'+(selected.has(a)?' selected':'');
+    ch.textContent=a;
+    ch.onclick=()=>{ch.classList.toggle('selected');selected.has(a)?selected.delete(a):selected.add(a)};
+    c.appendChild(ch);
+  });
+}
+
+function runAnalysis(){
+  document.querySelectorAll('.tab')[1].click();
+  document.querySelectorAll('.tab').forEach((b,i)=>{if(i===1){b.classList.add('active');b.onclick({target:b})}});
+  showTab('analyze',document.querySelectorAll('.tab')[1]);
+}
+
+loadSample('hiring');
+</script>
