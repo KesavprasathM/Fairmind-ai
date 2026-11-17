@@ -1,0 +1,173 @@
+Here are short speaker notes for each slide, written so you can say them out loud to your manager.
+
+Slide 1: Title
+
+“Today I’ll explain two ideas that are often confused: Generative AI and AI Agents.”
+“Simply put, Gen AI is the engine and Agents are the driver.”
+Slide 2: Advancement of AI
+
+“AI has grown in layers over time. AI started in the 1950s, machine learning in 1959, and deep learning in 1986.”
+“Generative AI came next, around 2014, when models began creating new text, images and code.”
+“Agentic AI is the latest layer, from about 2023. These systems can plan and carry out tasks on their own.”
+Slide 3: Practical applications of Gen AI
+
+“Gen AI creates new content from patterns it has learned.”
+“It covers four areas: text (ChatGPT), images (Midjourney, DALL-E), video and speech (Sora), and code and data (GitHub Copilot, Claude).”
+“It is already used in gaming, design and research.”
+Slide 4: Technology stack of a Gen AI model
+
+“Several layers sit behind every Gen AI product.”
+“At the bottom is infrastructure: cloud capacity and chips, which carry cost and carbon impact.”
+“Above that is data, which needs large volumes and proper management.”
+“Foundation models are pre-trained on that data, and fine-tuning adapts them to a specific need.”
+“Applications sit at the top, delivered through APIs and embedded in products.”
+Slide 5: AI Agents in action
+
+“An agent plans, decides and acts in a loop until the goal is met.”
+“Real examples are coding (Devin), customer support (Intercom Fin), workflow automation (Zapier) and deep research (Perplexity).”
+Slide 6: AI agent architecture
+
+“An agent has more parts than a plain model.”
+“A reasoning model is its brain, and tools and memory connect it to apps, the web and stored context.”
+“An orchestration layer plans the steps and coordinates multiple agents.”
+“Infrastructure and guardrails keep it safe, fast and cost-controlled.”
+Slide 7: Engine vs driver
+
+“This is the key slide. Gen AI is one step: you give a prompt and get an output.”
+“An agent works in a loop: set a goal, reason, act through tools, observe the result, and repeat until done.”
+“The LLM is the reasoning core inside the agent.”
+Slide 8: From Gen AI to AI Agent
+
+“Gen AI responds to prompts, while agents pursue goals.”
+“Gen AI is reactive, handles one step at a time, and needs a human to guide each step. It helps most with drafts and content.”
+“Agents are autonomous, use tools, fix their own errors and remember context. They complete whole tasks.”
+Slide 9: Challenges
+
+“Gen AI has three risks: hallucinations, data leakage, and bias or quality issues.”
+“Agents add three more: errors that compound across steps, unauthorized actions, and runaway loops that drive up cost.”
+“So we need guardrails and human review.”
+Slide 10: Closing
+
+“To sum up: Gen AI is the engine, agents are the driver, and humans stay firmly in control.”
+“I’m happy to take questions.”
+Your slides already have speaker notes on slides 2, 5 and 10, but they are only placeholders (“Mapla”, “Nandha”, “Im Kesav and im gonna”). Replace them with the notes above.
+
+I read slides 2, 4 and 6 from the diagram images, so please check the dates on slide 2 against the slide itself. I can also add these notes directly into the PPTX if you’d like.
+
+
+
+
+
+
+
+
+
+
+
+1 minute ago
+You said: and also give another notes for same ppt with some more details
+and also give another notes for same ppt  with some more details
+
+just now
+
+
+
+
+
+
+Claude responded: Here is a more detailed set of notes, with a talking script for each slide and a few extra points in case your manager asks follow-up questions.
+Reviewing slide details for the expanded notes
+
+
+Reviewing slide details for the expanded notes
+Here is a more detailed set of notes, with a talking script for each slide and a few extra points in case your manager asks follow-up questions.
+
+Slide 1: Title
+
+“Today I’ll cover Generative AI and AI Agents. People often use the two terms as if they mean the same thing, but they don’t.”
+“The idea I’ll use throughout is that Gen AI is the engine and the AI Agent is the driver.”
+“By the end you’ll see what each one does, where each is used, and what risks come with them.”
+Slide 2: Advancement of AI
+
+“Think of these as nested layers. Each one sits inside the one before it.”
+AI (1950s): the early goal was to simulate human intelligence in machines.
+Machine learning (1959): instead of hand-written rules, algorithms learn patterns from data.
+Deep learning (1986): multi-layered neural networks, loosely modelled on the human brain, handle complex data such as images and language.
+Generative AI (2014): models stopped only classifying and began creating new text, images and code.
+Agentic AI (2023): systems that plan and carry out tasks independently.
+“The point is that we’ve moved from AI that predicts, to AI that creates, to AI that acts.”
+Slide 3: Practical applications of Generative AI
+
+“Gen AI is a subset of AI that generates text, images, audio, video and 3D models. It is already used in gaming, entertainment, product design and scientific research.”
+Text: chatbots, content writing and language tasks (ChatGPT, GPT-4).
+Images: built with techniques like VAEs, GANs and diffusion models (Midjourney, DALL-E).
+Video and speech: predicting frames, cloning voices and converting text to speech (Sora, Canva).
+Code and data: code suggestions, quick prototyping and synthetic training data (GitHub Copilot, Claude).
+“Gen AI produces realistic, complex content that can resemble human creativity, but it still waits for a person to prompt it.”
+Slide 4: Technology stack of a Gen AI model
+
+“Behind every Gen AI product there are five layers. I’ll go from the bottom up.”
+Infrastructure: cloud capacity, new chip architectures and efficient algorithms. Cost and carbon footprint matter here.
+Data: enterprises must manage the full data lifecycle, with new data types and huge volumes.
+Foundation models: a maturing market of pre-trained models. Companies balance size, transparency and performance when choosing one.
+Fine-tuning: this adapts a model to our needs and takes multidisciplinary skills, such as engineering, psychology, linguistics and library science.
+Applications: delivered through cloud APIs and embedded into products. Firms fine-tune with their own proprietary data.
+“The takeaway is that Gen AI is a whole stack, not just a model, and it needs investment at every layer.”
+Slide 5: AI Agents in action
+
+“An AI agent uses AI models to plan, make decisions and execute multi-step tasks. It works with external tools, software and APIs in a continuous loop until the goal is met.”
+“It is already used in customer support, software engineering, finance operations and workflow automation.”
+Autonomous coding: fixing bugs, testing and deploying code (Devin, GitHub Copilot).
+Customer operations: resolving tickets, looking up orders and processing refunds (Intercom Fin, Salesforce Agentforce).
+Workflow automation: tasks across apps, email triage and scheduling (Zapier Central, Copilot Studio).
+Deep research: browsing the web, combining data and writing reports (Perplexity, OpenAI Operator).
+“In every case the agent finishes the whole task, not just one answer.”
+Slide 6: AI agent architecture
+
+“An agent needs a few more building blocks than a plain model.”
+Reasoning models: an advanced LLM is the brain. It plans steps, writes code and evaluates outcomes.
+Orchestration and frameworks: this layer manages the plan-act-observe loop, routes decisions and coordinates multiple specialized agents.
+Tools and memory: connects the agent to external APIs, web browsers and vector databases, so it has real-time context.
+Infrastructure and guardrails: secure sandboxes, cloud compute and monitoring layers keep the agent safe, fast and cost-controlled.
+Applications: the agent is embedded into workflows and chat interfaces, and handles multi-step tasks across tools on its own.
+“The takeaway is that the LLM is just one part. Tools, memory and guardrails make it a working agent.”
+Slide 7: Generative AI is the engine, AI Agents are the driver
+
+“This is the central idea of the talk.”
+Top flow, Gen AI: a prompt goes in, the model produces an output, and it ends there. It is one step and it needs a human to prompt it.
+Bottom flow, AI Agent: you give it a goal. It reasons using the LLM, acts through tools, observes the outcome, and repeats until the goal is met.
+“The LLM is the reasoning core in both. The agent wraps a loop and tools around it.”
+“An engine can produce power, but only a driver decides where to go and keeps going until arrival.”
+Slide 8: From Gen AI to AI Agent
+
+“In short, Gen AI responds to prompts and agents pursue goals. I’ll compare them row by row.”
+Reactive vs autonomous: Gen AI answers single prompts with one-off outputs. Agents break broad goals down without constant prompting.
+Content-focused vs tool-equipped: Gen AI creates text, images and code in a chat window. Agents connect to apps, browsers and APIs and take real action.
+Human-driven vs self-correcting: Gen AI needs manual prompting and review at every step. Agents review their own work, fix errors and adapt.
+Session-bound vs persistent memory: Gen AI is limited to the current conversation window. Agents remember context across long, multi-step tasks.
+Value: Gen AI gives faster content creation and brainstorming drafts. Agents give end-to-end task completion, not just drafts.
+“Agents don’t replace Gen AI. They are built on top of it.”
+Slide 9: Challenges in Gen AI and AI Agents
+
+“Both carry risks, and the agent risks are bigger because agents can act.”
+Gen AI:
+Hallucinations: the model generates plausible text, but facts aren’t guaranteed.
+Data leakage: prompts can accidentally expose sensitive company data.
+Bias and quality: outputs reflect flaws in the training data and need human editing.
+AI Agents:
+Compounding errors: in an autonomous loop, one mistake can spread across tools.
+Unauthorized actions: with API access, an agent could make unintended changes or payouts.
+Runaway loops: unchecked reasoning cycles can spike compute and API costs.
+“In short, Gen AI risks are mostly about wrong content, while agent risks are about wrong actions.”
+“Mitigations include human review, limited permissions, spending caps and monitoring.”
+Slide 10: Closing and discussion
+
+“To summarise: Gen AI is the engine, agents are the driver, and humans stay firmly in control.”
+“My recommendation is to start with Gen AI for content tasks, and introduce agents step by step, with guardrails and human approval for any action that matters.”
+“Thank you. I’m happy to take questions.”
+Likely questions from your manager
+
+“Is an agent just a better chatbot?” No. A chatbot answers, while an agent takes actions through tools and loops until the goal is done.
+“Where should we start?” Start with low-risk, high-volume tasks like drafting, summarizing and email triage, and keep a human approving any action.
+“What’s the biggest risk?” For Gen AI it’s wrong or leaked information. For agents it’s unauthorized actions and compounding errors, so permissions and monitoring matter most.
+I can also put these notes into the PPTX as speaker notes, or turn them into a Word document, if you’d like.
